@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class ÕûÊıÒç³ö {
+public class æ•´æ•°æº¢å‡º {
 	@Test
 	public void test(){
 		int i = -2147483648;
