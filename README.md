@@ -1,5 +1,5 @@
 ## how to use
-- git clone https://github.com/agileluo/algorithms_lear.git
+- git clone https://github.com/agileluo/algorithms_learn.git
 - 使用eclipse(或其它java开发工具)导入这个项目
 - 环境变量CLASSPATH设置，在系统变量中加入下面文件，前面跟项目目录
   - 项目目录/lib/stdlib.jar
