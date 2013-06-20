@@ -6,10 +6,10 @@
 public class Quick3Sort {
 	public static void main(String[] args) {
 		String[] a = In.readStrings();
-		SortExample.show(a);
+		SortUtils.show(a);
 		sort(a);
-		assert SortExample.isSorted(a);
-		SortExample.show(a);
+		assert SortUtils.isSorted(a);
+		SortUtils.show(a);
 	}
 	public static void sort(Comparable[] a) {
 		sort(a, 0, a.length-1);
@@ -20,8 +20,8 @@ public class Quick3Sort {
 		Comparable v = a[lo];
 		while(i <= gt){
 			int comp = a[i].compareTo(v);
-			if ( comp < 0) SortExample.exch(a, lt++, i++);
-			else if( comp > 0) SortExample.exch(a, i, gt--);
+			if ( comp < 0) SortUtils.exch(a, lt++, i++);
+			else if( comp > 0) SortUtils.exch(a, i, gt--);
 			else i++;
 		}
 		sort(a, lo, lt-1);

@@ -7,10 +7,10 @@
 public class MergeSort {
 	public static void main(String[] args) {
 		String[] a = In.readStrings();
-		SortExample.show(a);
+		SortUtils.show(a);
 		MergeSort.sort(a);
-		assert SortExample.isSorted(a);
-		SortExample.show(a);
+		assert SortUtils.isSorted(a);
+		SortUtils.show(a);
 	}
 	private static Comparable[] aux;
 	
@@ -36,7 +36,7 @@ public class MergeSort {
 		for(int k = lo; k <= hi; k++){
 			if( loIndex > mid ) a[k] = aux[hiIndex++];
 			else if (hiIndex > hi) a[k] = aux[loIndex++];
-			else if (SortExample.less(aux[hiIndex], aux[loIndex])) a[k] = aux[hiIndex++];
+			else if (SortUtils.less(aux[hiIndex], aux[loIndex])) a[k] = aux[hiIndex++];
 			else a[k] = aux[loIndex++];
 		}
 	}

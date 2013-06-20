@@ -6,10 +6,10 @@
 public class QuickSort {
 	public static void main(String[] args) {
 		String[] a = In.readStrings();
-		SortExample.show(a);
+		SortUtils.show(a);
 		sort(a);
-		assert SortExample.isSorted(a);
-		SortExample.show(a);
+		assert SortUtils.isSorted(a);
+		SortUtils.show(a);
 	}
 	public static void sort(Comparable[] a) {
 		sort(a, 0, a.length-1);
@@ -24,12 +24,12 @@ public class QuickSort {
 		int i = lo, j = hi + 1;
 		Comparable v = a[lo];
 		while(true){
-			while(SortExample.less(a[++i], v)) if( i == hi) break;
-			while(SortExample.less(v, a[--j])) if( j == lo) break;
+			while(SortUtils.less(a[++i], v)) if( i == hi) break;
+			while(SortUtils.less(v, a[--j])) if( j == lo) break;
 			if( i >= j) break;
-			SortExample.exch(a, i, j);
+			SortUtils.exch(a, i, j);
 		}
-		SortExample.exch(a, lo, j);
+		SortUtils.exch(a, lo, j);
 		return j;
 	}
 }

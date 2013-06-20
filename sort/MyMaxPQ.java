@@ -24,15 +24,15 @@ public class MyMaxPQ<Key extends Comparable<Key>> {
 	}
 
 	private void swim(int k) {
-		while (k > 1 && SortExample.less(pq[k / 2], pq[k])) {
-			SortExample.exch(pq, k, k / 2);
+		while (k > 1 && SortUtils.less(pq[k / 2], pq[k])) {
+			SortUtils.exch(pq, k, k / 2);
 			k /= 2;
 		}
 	}
 
 	public Key deleteMax() {
 		Key max = pq[1];
-		SortExample.exch(pq, 1, N--);
+		SortUtils.exch(pq, 1, N--);
 		pq[N + 1] = null;
 		sink(1);
 		return max;
@@ -41,11 +41,11 @@ public class MyMaxPQ<Key extends Comparable<Key>> {
 	private void sink(int k) {
 		while (2 * k <= N) {
 			int j = k * 2;
-			if (j < N && SortExample.less(pq[j], pq[j + 1]))
+			if (j < N && SortUtils.less(pq[j], pq[j + 1]))
 				j++;
-			if (!SortExample.less(pq[k], pq[j]))
+			if (!SortUtils.less(pq[k], pq[j]))
 				break;
-			SortExample.exch(pq, k, j);
+			SortUtils.exch(pq, k, j);
 			k = j;
 		}
 	}
